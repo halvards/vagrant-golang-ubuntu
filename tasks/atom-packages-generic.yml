@@ -1,0 +1,6 @@
+---
+- include: ./apm.yml plugin_name='editorconfig'
+- include: ./apm.yml plugin_name='merge-conflicts'
+- include: ./apm.yml plugin_name='project-manager'
+- include: ./apm.yml plugin_name='term2'
+

@@ -1,0 +1,4 @@
+---
+- include: ../repositories/sublime-text-3.yml
+- apt: pkg=sublime-text-installer
+

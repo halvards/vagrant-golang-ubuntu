@@ -1,0 +1,18 @@
+---
+- hosts: all
+  vars:
+    username: vagrant
+  tasks:
+    - include: ./tasks/base.yml
+    - include: ./tasks/git.yml
+    - include: ./tasks/golang14.yml
+    - include: ./tasks/vim-go-ide.yml
+    - include: ./tasks/vimx.yml
+    - include: ./tasks/atom.yml
+    - include: ./tasks/atom-packages-generic.yml
+    - include: ./tasks/atom-packages-golang.yml
+    - include: ./tasks/sublime3.yml
+    - include: ./tasks/kupfer.yml
+    - include: ./tasks/leafpad.yml
+    - include: ./tasks/google-chrome.yml
+

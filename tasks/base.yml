@@ -1,0 +1,19 @@
+---
+- name: Install base packages, but update Apt first if cache more than one week old
+  apt: pkg={{ item }} update_cache=yes cache_valid_time=604800
+  with_items:
+    - bash
+    - bzip2
+    - coreutils
+    - curl
+    - gzip
+    - man-db
+    - patch
+    - python-apt
+    - python-pycurl
+    - sed
+    - tar
+    - unzip
+    - wget
+    - zip
+

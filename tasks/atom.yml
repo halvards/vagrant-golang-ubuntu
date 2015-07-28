@@ -1,0 +1,4 @@
+---
+- include: ../repositories/atom.yml
+- apt: pkg=atom
+

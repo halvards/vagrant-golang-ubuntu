@@ -1,0 +1,3 @@
+---
+- apt_repository: repo='ppa:webupd8team/atom' update_cache=yes
+

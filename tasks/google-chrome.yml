@@ -1,0 +1,7 @@
+---
+- include: ../repositories/google-chrome.yml
+- apt: pkg=google-chrome-stable
+- name: Remove apt source file left over from apt_repository task, since Chrome adds its own on installation
+  file: path=/etc/apt/sources.list.d/dl_google_com_linux_chrome_deb.list
+        state=absent
+

@@ -1,0 +1,27 @@
+---
+- include: ./vim.yml
+- name: Download vim-go-ide
+  git: repo=https://github.com/farazdagi/vim-go-ide.git
+       dest=/home/{{ username }}/.vim_go_runtime
+       recursive=yes
+       version=HEAD
+       force=yes
+       accept_hostkey=yes
+  sudo_user: "{{ username }}"
+- name: Install vim-go-ide
+  shell: /bin/sh /home/{{ username }}/.vim_go_runtime/bin/install
+         creates=/home/{{ username }}/.vimrc.go
+  sudo_user: "{{ username }}"
+- name: Fix terminal colours issue
+  lineinfile: dest=/home/{{ username }}/.vimrc.go
+              line='set t_Co=256'
+- name: Create shell alias for vim-go-ide
+  lineinfile: dest=/home/{{ username }}/.bashrc
+              line='alias vimgo="vim -u ~/.vimrc.go"'
+- name: Make vim-go-ide the default vim setup
+  file: path=/home/{{ username }}/.vimrc
+        owner={{ username }} group={{ username }}
+        state=link
+        force=yes
+        src=/home/{{ username }}/.vimrc.go
+
